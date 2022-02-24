@@ -1,0 +1,8 @@
+{ "home" : 
+    {
+        "message": "Messages",
+        "contact": "Contacts",
+        "diary" : "Timeline",
+        "personal" : "Me"
+    }
+}
