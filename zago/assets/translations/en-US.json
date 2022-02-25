@@ -3,6 +3,7 @@
         "message": "Messages",
         "contact": "Contacts",
         "diary" : "Timeline",
-        "personal" : "Me"
+        "personal" : "Me",
+        "search" : "Search friends, messages..."
     }
 }

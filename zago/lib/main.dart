@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:zago/modules/home/ui/home_screen.dart';
 import 'package:zago/themes/app_colors.dart';
@@ -32,11 +31,5 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue, primaryColor: AppColors.kPrimaryColor),
       home: const HomeScreen(),
     );
-  }
-}
-
-void dlog(var value) {
-  if (kDebugMode) {
-    print(value);
   }
 }

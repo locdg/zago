@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:zago/common/abstract/my_loc.dart';
 
 class HomeBloc implements MyBlock {
-  StreamController indexPagesController = StreamController();
+  StreamController indexPagesController = StreamController.broadcast();
   Stream get indexPagesStream => indexPagesController.stream;
 
   void setIndexPage(int index) {

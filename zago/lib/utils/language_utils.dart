@@ -10,9 +10,9 @@ class MyLocale {
 }
 
 class KeyLang {
-  static const home = 'home';
-  static const message = 'message';
-  static const contact = 'contact';
-  static const diary = 'diary';
-  static const personal = 'personal';
+  static const homeMessage = 'home.message';
+  static const homeContact = 'home.contact';
+  static const homeDiary = 'home.diary';
+  static const homePersonal = 'home.personal';
+  static const homeSearch = 'home.search';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zago/common/stateless/badge.dart';
 import 'package:zago/modules/home/bloc/home_bloc.dart';
+import 'package:zago/modules/home/ui/components.dart/home_app_bar.dart';
 import 'package:zago/themes/app_colors.dart';
 import 'package:zago/themes/app_sizes.dart';
 import 'package:zago/utils/language_utils.dart';
@@ -17,9 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> pages = [
-    Container(
-        color: Colors.red,
-        child: Center(child: const Text(KeyLang.message).tr())),
+    Container(color: Colors.red),
     Container(color: Colors.blue),
     Container(color: Colors.green),
     Container(color: Colors.pink),
@@ -39,6 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(AppSize.sizeAppBar),
+        child: HomeAppBar(bloc: bloc),
+      ),
       body: buildBodyPageView(),
       bottomNavigationBar: buildBottomNavigationBar(),
       floatingActionButton: FloatingActionButton(
@@ -55,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  /* Body pages */
   Widget buildBodyPageView() {
     return PageView(
         controller: pageController,
@@ -64,13 +68,16 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         children: pages);
   }
+  /* Body pages */
 
+  /* Bottom NavigationBar */
   StreamBuilder buildBottomNavigationBar() {
     return StreamBuilder(
         stream: bloc.indexPagesStream,
         builder: (context, snapshot) {
           return BottomNavigationBar(
               onTap: (index) {
+                setState(() {});
                 bloc.setIndexPage(index);
                 pageController.jumpToPage(index);
               },
@@ -78,18 +85,15 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedItemColor: AppColors.kPrimaryColor,
               unselectedItemColor: AppColors.kSecondaryColor,
               items: [
-                buildNavigationBarItem(
-                    '${KeyLang.home}.${KeyLang.message}'.tr(),
+                buildNavigationBarItem(KeyLang.homeMessage.tr(),
                     const FaIcon(FontAwesomeIcons.comment),
                     bagde: 8),
-                buildNavigationBarItem(
-                    '${KeyLang.home}.${KeyLang.contact}'.tr(),
+                buildNavigationBarItem(KeyLang.homeContact.tr(),
                     const FaIcon(FontAwesomeIcons.addressBook)),
-                buildNavigationBarItem('${KeyLang.home}.${KeyLang.diary}'.tr(),
+                buildNavigationBarItem(KeyLang.homeDiary.tr(),
                     const FaIcon(FontAwesomeIcons.clock),
                     bagde: 10),
-                buildNavigationBarItem(
-                    '${KeyLang.home}.${KeyLang.personal}'.tr(),
+                buildNavigationBarItem(KeyLang.homePersonal.tr(),
                     const FaIcon(FontAwesomeIcons.user)),
               ]);
         });
@@ -99,13 +103,8 @@ class _HomeScreenState extends State<HomeScreen> {
       {int bagde = 0}) {
     return BottomNavigationBarItem(
       label: title,
-      icon: Stack(alignment: Alignment.center, children: [
-        icon,
-        Padding(
-            padding: const EdgeInsets.only(
-                bottom: AppSize.kSize20, left: AppSize.kSize20),
-            child: Badge(number: bagde))
-      ]),
+      icon: IconWithBadge(icon: icon, number: bagde),
     );
   }
+  /* Bottom NavigationBar */
 }
