@@ -15,4 +15,5 @@ class KeyLang {
   static const homeDiary = 'home.diary';
   static const homePersonal = 'home.personal';
   static const homeSearch = 'home.search';
+  static const messageHour = 'message.hour';
 }

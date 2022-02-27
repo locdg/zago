@@ -5,5 +5,8 @@
     "diary" : "Nhật ký",
     "personal" : "Cá nhân",
     "search" : "Tìm kiếm bạn bè, tin nhắn..."
-    }
+    },
+    "message" : {
+        "hour" : "giờ"
+    } 
 }

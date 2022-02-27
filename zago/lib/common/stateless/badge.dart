@@ -4,18 +4,31 @@ import 'package:zago/themes/app_colors.dart';
 import 'package:zago/themes/app_sizes.dart';
 
 class Badge extends StatelessWidget {
-  const Badge({Key? key, this.color = Colors.redAccent, this.number = 0})
+  const Badge(
+      {Key? key,
+      this.color = Colors.redAccent,
+      this.number = 0,
+      this.isNew = false})
       : super(key: key);
   final Color color;
   final int number;
+  final bool isNew;
   @override
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.center, children: [
       Icon(Icons.circle,
           size: AppSize.kSize20,
-          color: (number == 0 ? Colors.transparent : color)),
+          color: (isNew
+              ? color
+              : number == 0
+                  ? Colors.transparent
+                  : color)),
       Text(
-        (number == 0 ? '' : '$number'),
+        (isNew
+            ? 'N'
+            : number == 0
+                ? ''
+                : '$number'),
         style: const TextStyle(
           color: AppColors.kWhite,
           fontSize: 8,

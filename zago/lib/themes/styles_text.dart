@@ -9,4 +9,10 @@ class StyleText {
       TextStyle(color: AppColors.kColorText, fontSize: AppSize.sizeText14);
   static const whiteTitle =
       TextStyle(color: AppColors.kWhite, fontSize: AppSize.sizeText15);
+
+  static const textTitleBold = TextStyle(
+      color: AppColors.kColorText,
+      fontSize: AppSize.sizeText15,
+      fontWeight: FontWeight.w700);
+
 }

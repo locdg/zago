@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-abstract class MyBlock {
+abstract class MyBloc {
   void dispose() {}
 }
 

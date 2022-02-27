@@ -1,0 +1,95 @@
+{
+    "statusCode" : 200,
+    "statusMessage" : "",
+    "data": [
+        {
+           "id": 102,
+           "nameContact": "Media Box",
+           "avatar":  "https://reqres.in/img/faces/2-image.jpg",
+           "lastMessage": "Dựa vào hình ảnh chụp từ vệ tinh, giới quan sát đã nhận thấy chiến lược không kích của Nga nhằm vào căn cứ quân sự của Ukraine",
+           "lastTimeMessage": 1645905131,
+           "isRead": true
+        },
+
+        {
+            "id": 103,
+            "nameContact": "CK-VIP cơ sở",
+            "avatar":  "https://reqres.in/img/faces/3-image.jpg",
+            "lastMessage": "Chủ tịch nước và phu nhân, cùng đoàn đại biểu cấp cao Việt Nam mặc niệm trước Tượng đài Chủ tịch Hồ Chí Minh",
+            "lastTimeMessage": 1645832105,
+            "isRead": true
+         },
+
+         {
+            "id": 104,
+            "nameContact": "Hưng Bún",
+            "avatar":  "https://reqres.in/img/faces/4-image.jpg",
+            "lastMessage": "Nhân kỷ niệm 67 năm Ngày Thầy thuốc Việt Nam (27/2), Chủ tịch Quốc hội Vương Đình Huệ đã thăm và",
+            "lastTimeMessage": 1645839305,
+            "isRead": false
+         },
+
+         {
+            "id": 105,
+            "nameContact": "Nhà mình đánh chứng",
+            "avatar":  "https://reqres.in/img/faces/5-image.jpg",
+            "lastMessage": "Phát biểu tại đây, Chủ tịch Quốc hội thay mặt lãnh đạo Đảng, Nhà nước, Quốc hội, Ủy ban Thường vụ Quốc hội gửi tới các thầy thuốc",
+            "lastTimeMessage": 1645846505,
+            "isRead": true
+         },
+
+         {
+            "id": 106,
+            "nameContact": "Thời tiết",
+            "avatar":  "https://reqres.in/img/faces/6-image.jpg",
+            "lastMessage": "Qua báo cáo của Bộ Y tế, Bệnh viện Hữu nghị Việt Đức, Chủ tịch Quốc hội nhấn mạnh lịch sử phát triển ngành y tế, đội ngũ thầy thuốc",
+            "lastTimeMessage": 1645853705,
+            "isRead": false
+         },
+
+         {
+            "id": 107,
+            "nameContact": "Đầu tư tăng trưởng SSI",
+            "avatar":  "https://reqres.in/img/faces/7-image.jpg",
+            "lastMessage": "Qua báo cáo của Bộ Y tế, Bệnh viện Hữu nghị Việt Đức, Chủ tịch Quốc hội nhấn mạnh lịch sử phát triển ngành y tế, đội ngũ thầy thuốc",
+            "lastTimeMessage": 1645860905,
+            "isRead": true
+         },
+         
+         {
+            "id": 108,
+            "nameContact": "Phạm Huy",
+            "avatar":  "https://reqres.in/img/faces/8-image.jpg",
+            "lastMessage": "Chỉ tính đợt dịch thứ 4 (tháng 4/2021 đến nay), ngành y tế đã huy động một lực lượng lớn nhất từ trước đến nay với hơn 25.000",
+            "lastTimeMessage": 1645868105,
+            "isRead": true
+         },
+
+         {
+            "id": 109,
+            "nameContact": "Cư dân 132 CG",
+            "avatar":  "https://reqres.in/img/faces/9-image.jpg",
+            "lastMessage": "Chủ tịch Quốc hội mong muốn hệ thống nghiên cứu khoa học và đào tạo nhân lực y tế mà đầu mối là Bộ Y tế phải phát triển",
+            "lastTimeMessage": 1645875305,
+            "isRead": true
+         },
+         {
+            "id": 1010,
+            "nameContact": "Bảo tín Minh Châu",
+            "avatar":  "https://reqres.in/img/faces/10-image.jpg",
+            "lastMessage": "Qua báo cáo của Bộ Y tế, Bệnh viện Hữu nghị Việt Đức, Chủ tịch Quốc hội nhấn mạnh lịch sử phát triển ngành y tế, đội ngũ thầy thuốc",
+            "lastTimeMessage": 1645882505,
+            "isRead": true
+         },
+         {
+            "id": 1011,
+            "nameContact": "MB Bank",
+            "avatar":  "https://reqres.in/img/faces/11-image.jpg",
+            "lastMessage": "nhà khoa học và toàn thể đội ngũ bác sĩ, cán bộ và nhân viên y tế trên cả nước những tình cảm",
+            "lastTimeMessage": 1645882505,
+            "isRead": true
+         }
+
+    ]
+
+}

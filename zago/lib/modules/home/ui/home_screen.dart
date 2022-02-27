@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zago/common/stateless/badge.dart';
 import 'package:zago/modules/home/bloc/home_bloc.dart';
 import 'package:zago/modules/home/ui/components.dart/home_app_bar.dart';
+import 'package:zago/modules/messages/ui/messsage_screen.dart';
 import 'package:zago/themes/app_colors.dart';
 import 'package:zago/themes/app_sizes.dart';
 import 'package:zago/utils/language_utils.dart';
@@ -17,12 +18,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<Widget> pages = [
-    Container(color: Colors.red),
-    Container(color: Colors.blue),
-    Container(color: Colors.green),
-    Container(color: Colors.pink),
-  ];
   final defaultIndex = 0;
   final pageController = PageController();
   final bloc = HomeBloc();
@@ -66,7 +61,12 @@ class _HomeScreenState extends State<HomeScreen> {
         onPageChanged: (index) {
           bloc.setIndexPage(index);
         },
-        children: pages);
+        children: [
+          const MessageScreen(),
+          Container(color: Colors.blue),
+          Container(color: Colors.green),
+          Container(color: Colors.pink),
+        ]);
   }
   /* Body pages */
 
@@ -77,7 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (context, snapshot) {
           return BottomNavigationBar(
               onTap: (index) {
-                setState(() {});
                 bloc.setIndexPage(index);
                 pageController.jumpToPage(index);
               },

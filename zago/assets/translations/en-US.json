@@ -5,5 +5,10 @@
         "diary" : "Timeline",
         "personal" : "Me",
         "search" : "Search friends, messages..."
-    }
+    },
+   "message" : {
+       "hour" : "hour"
+   } 
+
+
 }
