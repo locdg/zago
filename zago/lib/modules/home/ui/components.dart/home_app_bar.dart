@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zago/common/stateless/space.dart';
+import 'package:zago/common/widget/space.dart';
 import 'package:zago/modules/home/bloc/home_bloc.dart';
 import 'package:zago/themes/app_sizes.dart';
 import 'package:zago/themes/styles_text.dart';

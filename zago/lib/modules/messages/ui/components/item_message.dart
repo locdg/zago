@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:zago/common/abstract/my_loc.dart';
-import 'package:zago/common/stateless/badge.dart';
-import 'package:zago/common/stateless/space.dart';
+import 'package:zago/common/routes/routes.dart';
+import 'package:zago/common/widget/badge.dart';
+import 'package:zago/common/widget/space.dart';
+import 'package:zago/modules/chat/ui/chat_screen.dart';
 import 'package:zago/modules/messages/model/messsage.dart';
 import 'package:zago/themes/app_colors.dart';
 import 'package:zago/themes/app_sizes.dart';
@@ -33,7 +34,9 @@ class ItemMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (() {}),
+      onTap: (() {
+        Routes.push(context, ChatScreen(message: message));
+      }),
       child: Stack(
         children: [
           Container(
@@ -58,7 +61,7 @@ class ItemMessage extends StatelessWidget {
       child: CircleAvatar(
         backgroundColor: Colors.black12,
         backgroundImage: NetworkImage(message.avatar),
-        minRadius: 50,
+        radius: 50,
       ),
     );
   }

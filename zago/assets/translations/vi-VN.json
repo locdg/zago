@@ -8,5 +8,9 @@
     },
     "message" : {
         "hour" : "giờ"
+    },
+    "chat" : {
+        "message" : "Tin nhắn..."
     } 
+    
 }

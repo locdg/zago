@@ -8,7 +8,11 @@
     },
    "message" : {
        "hour" : "hour"
-   } 
+   },
+
+   "chat" : {
+    "message" : "Message..."
+    } 
 
 
 }

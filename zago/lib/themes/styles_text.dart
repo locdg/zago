@@ -6,13 +6,17 @@ class StyleText {
   static const defaultWhite =
       TextStyle(color: AppColors.kWhite, fontSize: AppSize.sizeText14);
   static const defaultBlack =
-      TextStyle(color: AppColors.kColorText, fontSize: AppSize.sizeText14);
+      TextStyle(color: AppColors.kColorText, fontSize: AppSize.sizeText15);
   static const whiteTitle =
       TextStyle(color: AppColors.kWhite, fontSize: AppSize.sizeText15);
+
+  static const defaultWhiteSmall = TextStyle(
+      color: AppColors.kWhite,
+      fontSize: AppSize.sizeText12,
+      fontWeight: FontWeight.w400);
 
   static const textTitleBold = TextStyle(
       color: AppColors.kColorText,
       fontSize: AppSize.sizeText15,
       fontWeight: FontWeight.w700);
-
 }

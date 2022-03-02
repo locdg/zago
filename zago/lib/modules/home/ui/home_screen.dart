@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:zago/common/stateless/badge.dart';
+import 'package:zago/common/widget/badge.dart';
+
 import 'package:zago/modules/home/bloc/home_bloc.dart';
 import 'package:zago/modules/home/ui/components.dart/home_app_bar.dart';
 import 'package:zago/modules/messages/ui/messsage_screen.dart';
