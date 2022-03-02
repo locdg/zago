@@ -1,11 +1,12 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import 'package:permission_handler/permission_handler.dart';
 import 'package:zago/common/widget/space.dart';
 import 'package:zago/modules/chat/bloc/chat_bloc.dart';
 import 'package:zago/modules/chat/model/item_chat_obj.dart';
 import 'package:zago/modules/chat/ui/components/chat_item_message.dart';
+import 'package:zago/modules/chat/ui/components/chat_menu_type_message.dart';
 import 'package:zago/themes/app_colors.dart';
 import 'package:zago/themes/app_sizes.dart';
 import 'package:zago/utils/language_utils.dart';
@@ -56,8 +57,10 @@ class ChatMessageState extends State<ChatMessage> {
                   itemCount: fakeListItemChat.length,
                   reverse: true,
                   itemBuilder: (context, index) {
-                    return ChatItemMessage(
-                        itemChatObj: fakeListItemChat[index]);
+                    return ChatMenuTypeMessage(
+                      child:
+                          ChatItemMessage(itemChatObj: fakeListItemChat[index]),
+                    );
                   });
             }),
       ),
@@ -116,7 +119,9 @@ class ChatMessageState extends State<ChatMessage> {
                   })
               : Row(
                   children: [
-                    getIcon(Icons.more_horiz_outlined, () {}),
+                    const ChatMenuTypeMessage(
+                        child: Icon(Icons.more_horiz_outlined,
+                            color: Colors.grey, size: AppSize.sizeIcon1)),
                     Horizontal(space: AppSize.kSize5),
                     getIcon(Icons.mic, () {}),
                     Horizontal(space: AppSize.kSize5),

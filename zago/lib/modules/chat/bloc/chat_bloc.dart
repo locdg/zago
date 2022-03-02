@@ -54,7 +54,7 @@ class ChatBloc implements MyBloc {
     checkPermission(isDenied);
   }
 
-  // Save Image To L
+  // Save Image To Local
   Future<void> saveImageLocalAndPushMessage() async {
     List<XFile>? listImage = await getListFile();
     List<String> listPathSave = [];
