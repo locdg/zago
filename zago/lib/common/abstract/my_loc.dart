@@ -9,3 +9,5 @@ void dlog(var value) {
     print(value);
   }
 }
+
+//// Test ti lam gi cang
