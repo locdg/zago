@@ -33,24 +33,27 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(AppSize.sizeAppBar),
-        child: HomeAppBar(bloc: bloc),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(AppSize.sizeAppBar),
+          child: HomeAppBar(bloc: bloc),
+        ),
+        body: buildBodyPageView(),
+        bottomNavigationBar: buildBottomNavigationBar(),
+        floatingActionButton: FloatingActionButton(
+            tooltip: 'Change',
+            child: const Icon(
+              Icons.change_circle,
+              color: AppColors.kPrimaryColor,
+            ),
+            backgroundColor: AppColors.kWhite,
+            onPressed: () {
+              context.setLocale(
+                  context.locale == MyLocale.vi ? MyLocale.en : MyLocale.vi);
+            }),
       ),
-      body: buildBodyPageView(),
-      bottomNavigationBar: buildBottomNavigationBar(),
-      floatingActionButton: FloatingActionButton(
-          tooltip: 'Change',
-          child: const Icon(
-            Icons.change_circle,
-            color: AppColors.kPrimaryColor,
-          ),
-          backgroundColor: AppColors.kWhite,
-          onPressed: () {
-            context.setLocale(
-                context.locale == MyLocale.vi ? MyLocale.en : MyLocale.vi);
-          }),
     );
   }
 
