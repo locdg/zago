@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zago/common/widget/badge.dart';
+import 'package:zago/modules/contacts/contact.dart';
 
 import 'package:zago/modules/home/bloc/home_bloc.dart';
 import 'package:zago/modules/home/ui/components.dart/home_app_bar.dart';
@@ -42,17 +43,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: buildBodyPageView(),
         bottomNavigationBar: buildBottomNavigationBar(),
-        floatingActionButton: FloatingActionButton(
-            tooltip: 'Change',
-            child: const Icon(
-              Icons.change_circle,
-              color: AppColors.kPrimaryColor,
-            ),
-            backgroundColor: AppColors.kWhite,
-            onPressed: () {
-              context.setLocale(
-                  context.locale == MyLocale.vi ? MyLocale.en : MyLocale.vi);
-            }),
+        // floatingActionButton: FloatingActionButton(
+        //     tooltip: 'Change',
+        //     child: const Icon(
+        //       Icons.change_circle,
+        //       color: AppColors.kPrimaryColor,
+        //     ),
+        //     backgroundColor: AppColors.kWhite,
+        //     onPressed: () {
+        //       context.setLocale(
+        //           context.locale == MyLocale.vi ? MyLocale.en : MyLocale.vi);
+        //     }),
       ),
     );
   }
@@ -66,16 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         children: [
           const MessageScreen(),
-          Container(
-            color: Colors.blue,
-            child: Align(
-              alignment: Alignment.center,
-              child: Container(
-                color: Colors.black,
-                height: 300,
-              ),
-            ),
-          ),
+          const Contract(),
           Container(color: Colors.green),
           Container(color: Colors.pink),
         ]);
