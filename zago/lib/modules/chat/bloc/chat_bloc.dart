@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
+
 import 'package:zago/common/abstract/my_loc.dart';
 import 'package:zago/modules/chat/model/item_chat_obj.dart';
 
@@ -34,24 +34,6 @@ class ChatBloc implements MyBloc {
               imagePath: path));
     }
     controllerSendMessage.sink.add(true);
-  }
-
-  /* Check Permission */
-  Future<void> checkPermission(Function(bool) checkPermission) async {
-    Map<Permission, PermissionStatus> statuses = await [
-      Permission.camera,
-      Permission.storage,
-      Permission.photos,
-      Permission.microphone
-    ].request();
-    final isDenied = [
-      statuses[Permission.camera],
-      statuses[Permission.storage],
-      statuses[Permission.photos],
-      statuses[Permission.microphone]
-    ].contains(PermissionStatus.permanentlyDenied);
-
-    checkPermission(isDenied);
   }
 
   // Save Image To Local

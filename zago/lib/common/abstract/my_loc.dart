@@ -6,7 +6,7 @@ abstract class MyBloc {
 
 void dlog(var value) {
   if (kDebugMode) {
-    print(value);
+    print(value.toString());
   }
 }
 // đây là nhánh dev

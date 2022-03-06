@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:zago/modules/home/ui/home_screen.dart';
 import 'package:zago/themes/app_colors.dart';
 import 'package:zago/utils/language_utils.dart';
@@ -7,13 +8,16 @@ import 'package:zago/utils/language_utils.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  runApp(EasyLocalization(
-    child: const MyApp(),
-    path: 'assets/translations',
-    saveLocale: true,
-    supportedLocales: MyLocale.listLocale(),
-    fallbackLocale: MyLocale.vi,
-  ));
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(EasyLocalization(
+      child: const MyApp(),
+      path: 'assets/translations',
+      saveLocale: true,
+      supportedLocales: MyLocale.listLocale(),
+      fallbackLocale: MyLocale.vi,
+    ));
+  });
 }
 
 class MyApp extends StatelessWidget {

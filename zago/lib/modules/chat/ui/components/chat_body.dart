@@ -1,7 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import 'package:permission_handler/permission_handler.dart';
 import 'package:zago/common/widget/space.dart';
 import 'package:zago/modules/chat/bloc/chat_bloc.dart';
 import 'package:zago/modules/chat/model/item_chat_obj.dart';
@@ -10,6 +8,7 @@ import 'package:zago/modules/chat/ui/components/chat_menu_type_message.dart';
 import 'package:zago/themes/app_colors.dart';
 import 'package:zago/themes/app_sizes.dart';
 import 'package:zago/utils/language_utils.dart';
+import 'package:zago/utils/perrmission.dart';
 
 class ChatMessage extends StatefulWidget {
   const ChatMessage({Key? key}) : super(key: key);
@@ -125,14 +124,12 @@ class ChatMessageState extends State<ChatMessage> {
                     Horizontal(space: AppSize.kSize5),
                     getIcon(Icons.mic, () {}),
                     Horizontal(space: AppSize.kSize5),
-                    getIcon(Icons.photo, () {
-                      bloc.checkPermission((isDenied) {
-                        if (isDenied) {
-                          openAppSettings();
-                        } else {
-                          bloc.saveImageLocalAndPushMessage();
-                        }
-                      });
+                    getIcon(Icons.photo, () async {
+                      final isSuccess =
+                          await PermissionUtils.checkPermissionCamera();
+                      if (isSuccess) {
+                        bloc.saveImageLocalAndPushMessage();
+                      }
                     }),
                   ],
                 );

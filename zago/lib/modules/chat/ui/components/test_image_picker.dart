@@ -400,6 +400,7 @@ typedef OnPickImageCallback = void Function(
     double? maxWidth, double? maxHeight, int? quality);
 
 class AspectRatioVideo extends StatefulWidget {
+  // ignore: use_key_in_widget_constructors
   const AspectRatioVideo(this.controller);
 
   final VideoPlayerController? controller;

@@ -1,10 +1,14 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:zago/common/routes/routes.dart';
 import 'package:zago/common/widget/space.dart';
 import 'package:zago/modules/home/bloc/home_bloc.dart';
+import 'package:zago/modules/ocr_ekyc/camera_ekyc.dart';
 import 'package:zago/themes/app_sizes.dart';
 import 'package:zago/themes/styles_text.dart';
 import 'package:zago/utils/language_utils.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:zago/utils/perrmission.dart';
 
 class HomeAppBar extends StatefulWidget {
   const HomeAppBar({
@@ -60,9 +64,20 @@ class HomeAppBarState extends State<HomeAppBar> {
   /* Message */
   List<Widget> message() {
     return [
-      const Icon(
-        Icons.qr_code,
-        size: AppSize.sizeIcon1,
+      InkWell(
+        onTap: () async {
+          final isSuccess = await PermissionUtils.checkPermissionCamera();
+          if (isSuccess) {
+            final cameras = await availableCameras();
+            if (cameras.isNotEmpty) {
+              Routes.push(context, CameraEkyc(camera: cameras.first));
+            }
+          }
+        },
+        child: const Icon(
+          Icons.qr_code,
+          size: AppSize.sizeIcon1,
+        ),
       ),
       Horizontal(),
       const Icon(

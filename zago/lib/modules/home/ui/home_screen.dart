@@ -57,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  /* Body pages */
   Widget buildBodyPageView() {
     return PageView(
         controller: pageController,
@@ -67,7 +66,16 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         children: [
           const MessageScreen(),
-          Container(color: Colors.blue),
+          Container(
+            color: Colors.blue,
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                color: Colors.black,
+                height: 300,
+              ),
+            ),
+          ),
           Container(color: Colors.green),
           Container(color: Colors.pink),
         ]);
