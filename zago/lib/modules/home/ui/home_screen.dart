@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zago/common/widget/badge.dart';
 import 'package:zago/modules/contacts/contact.dart';
+import 'package:zago/modules/cubit/app_cubit.dart';
+import 'package:zago/modules/cubit/app_cubit_logic.dart';
 
 import 'package:zago/modules/home/bloc/home_bloc.dart';
 import 'package:zago/modules/home/ui/components.dart/home_app_bar.dart';
+import 'package:zago/modules/messages/repo/message_repo.dart';
 import 'package:zago/modules/messages/ui/messsage_screen.dart';
 import 'package:zago/themes/app_colors.dart';
 import 'package:zago/themes/app_sizes.dart';
@@ -67,7 +71,10 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         children: [
           const MessageScreen(),
-          const Contract(),
+          BlocProvider<AppCubits>(
+            create: (context)=> AppCubits(MessageRepo()),
+            child: const AppCubitLogics() ,
+          ),
           Container(color: Colors.green),
           Container(color: Colors.pink),
         ]);
